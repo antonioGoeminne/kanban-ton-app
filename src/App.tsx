@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { MantineProvider } from '@mantine/core';
+import { LayoutWrapper } from './components/LayoutWrapper';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
+      theme={{
+        colorScheme: 'dark',
+        colors: {
+          brand: ['#FFA22B'], 
+          toDo: ['#E2FD72'],
+          doing: ['#72FBFD'],
+          done: ['#8FFD72'],
+          dark: [
+            '#F1F4FB',
+            '#A6A7AB',
+            '#909296',
+            '#5C5F66',
+            '#373A40',
+            '#2C2E33',
+            '#25262B',
+            '#1A1B1E',
+            '#141517',
+            '#101113',
+          ],
+        },
+        primaryColor: 'brand',
+        shadows: {
+          md: '1px 1px 3px rgba(0, 0, 0, .25)',
+          xl: '5px 5px 3px rgba(0, 0, 0, .25)',
+        }
+      }}
+    >
+      <LayoutWrapper />
+    </MantineProvider>
+  )
 }
 
 export default App;
